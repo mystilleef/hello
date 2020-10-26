@@ -1,0 +1,174 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "zsh",
+      "type": "process",
+      "command": "zsh",
+      "presentation": {
+        "echo": false,
+        "reveal": "always",
+        "focus": false,
+        "panel": "dedicated",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "problemMatcher": [],
+      "runOptions": {
+        "runOn": "folderOpen"
+      },
+      "group": "none",
+    },
+    {
+      "label": "stack repl",
+      "type": "process",
+      "command": "stack",
+      "args": [
+        "repl",
+        "--silent",
+        "--no-interleaved-output",
+      ],
+      "presentation": {
+        "echo": false,
+        "reveal": "always",
+        "focus": true,
+        "panel": "dedicated",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "problemMatcher": [],
+      "group": "none"
+    },
+    {
+      "label": "stack hoogle",
+      "type": "process",
+      "command": "stack",
+      "args": [
+        "hoogle",
+        "--",
+        "generate",
+        "--local"
+      ],
+      "presentation": {
+        "echo": false,
+        "reveal": "silent",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "problemMatcher": [],
+      "runOptions": {
+        "runOn": "folderOpen"
+      },
+    },
+    {
+      "label": "stack hoogle server",
+      "type": "process",
+      "command": "stack",
+      "args": [
+        "hoogle",
+        "--",
+        "server",
+        "--local",
+        "--port=8080",
+      ],
+      "presentation": {
+        "echo": false,
+        "reveal": "always",
+        "focus": false,
+        "panel": "dedicated",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "stack run",
+      "type": "process",
+      "command": "stack",
+      "args": [
+        "run",
+        "--silent",
+        "--no-interleaved-output"
+      ],
+      "presentation": {
+        "echo": false,
+        "reveal": "always",
+        "focus": false,
+        "panel": "dedicated",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "stack build",
+      "type": "process",
+      "command": "stack",
+      "args": [
+        "build",
+        "--fast",
+        "--haddock-deps",
+        "--no-interleaved-output"
+      ],
+      "presentation": {
+        "echo": false,
+        "reveal": "always",
+        "focus": false,
+        "panel": "dedicated",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "problemMatcher": [],
+      "group": "build"
+    },
+    {
+      "label": "stack test",
+      "type": "process",
+      "command": "stack",
+      "args": [
+        "test",
+        "--fast",
+        "--silent",
+        "--haddock-deps",
+        "--no-interleaved-output",
+      ],
+      "presentation": {
+        "echo": false,
+        "reveal": "always",
+        "focus": false,
+        "panel": "dedicated",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "problemMatcher": [],
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "stack ghcid",
+      "type": "process",
+      "command": "./stackghcidtest.sh",
+      "presentation": {
+        "echo": false,
+        "reveal": "always",
+        "focus": false,
+        "panel": "dedicated",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "problemMatcher": [],
+      "runOptions": {
+        "runOn": "folderOpen"
+      },
+      "group": "test",
+    },
+  ]
+}
