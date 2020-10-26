@@ -1,0 +1,15 @@
+- arguments: [-j=4, -XHaskell2010]
+- group: { name: default, enabled: true }
+- group: { name: dollar, enabled: true }
+- group: { name: generalise, enabled: true }
+- group: { name: generalise-for-conciseness, enabled: true }
+- group: { name: extra, enabled: true }
+- group: { name: teaching, enabled: true }
+- group: { name: use-lens, enabled: true }
+- group: { name: attoparsec, enabled: true }
+- group: { name: codeworld, enabled: true }
+- group: { name: monomorphic, enabled: true }
+- group: { name: future, enabled: true }
+- warn: { name: Use module export list }
+- warn: { name: Use String }
+- ignore: { name: Use infix }
