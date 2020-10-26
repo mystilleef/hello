@@ -2,9 +2,10 @@ module Main (module Main) where
 
 import DogsRule (dogs)
 import Hello (sayHello)
-import Prelude (IO)
+import Prelude (IO, getLine)
 
 main :: IO ()
 main = do
-  sayHello
+  name <- getLine
+  sayHello name
   dogs

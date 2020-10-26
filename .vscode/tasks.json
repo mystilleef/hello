@@ -112,7 +112,6 @@
       "command": "stack",
       "args": [
         "build",
-        "--fast",
         "--haddock-deps",
         "--no-interleaved-output"
       ],
