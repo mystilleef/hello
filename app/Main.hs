@@ -1,7 +1,10 @@
 module Main (module Main) where
 
-import Prelude (IO)
+import DogsRule (dogs)
 import Hello (sayHello)
+import Prelude (IO)
 
 main :: IO ()
-main = sayHello
+main = do
+  sayHello
+  dogs

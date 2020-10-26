@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 6a1834c95ffd3ed34a2cd6395958ec2bc1b03423a28b4932941959e3e2c3ec3c
+-- hash: cfa35253477f72563e492a0711fec167eda351db388715b88759a97b9cb30a05
 
 name:           hello
 version:        0.1.0.0
@@ -22,6 +22,7 @@ build-type:     Simple
 
 library
   exposed-modules:
+    DogsRule
     Hello
   other-modules:
     Paths_hello
