@@ -1,0 +1,23 @@
+name: hello
+version: '0.1.0.0'
+synopsis: Simple project template from stack
+description: Please see README.md
+category: Web
+author: Lateef Alabi-Oki
+maintainer: mystilleef@gmail.com
+copyright:
+- '2020'
+- Your Name Here
+license: GPL-3
+homepage: https://github.com/bitemyapp/hello#readme
+
+dependencies:
+- base >=4.7 && <5
+
+library:
+  source-dirs: src
+
+executables:
+  hello:
+    main: Main.hs
+    source-dirs: src
