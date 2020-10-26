@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: da5b08658dc64106304d479f0168471cea2d6bbe5f17d353f4acc41e6a4f6b9f
+-- hash: 6a1834c95ffd3ed34a2cd6395958ec2bc1b03423a28b4932941959e3e2c3ec3c
 
 name:           hello
 version:        0.1.0.0
@@ -50,6 +50,7 @@ test-suite hello-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
+    HelloSpec
     Paths_hello
   hs-source-dirs:
     test
