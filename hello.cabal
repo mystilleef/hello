@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: d49d82f4e5774a19993414639731da1519ccbd88fe5eab4f33e26eec70c87039
+-- hash: da5b08658dc64106304d479f0168471cea2d6bbe5f17d353f4acc41e6a4f6b9f
 
 name:           hello
 version:        0.1.0.0
@@ -40,7 +40,7 @@ executable hello-exe
   hs-source-dirs:
     app
   default-extensions: Safe NoImplicitPrelude UnicodeSyntax DerivingStrategies NamedFieldPuns RecordWildCards NumericUnderscores MultiWayIf LambdaCase
-  ghc-options: -Wno-missing-local-signatures -j -threaded -rtsopts -with-rtsopts=-N
+  ghc-options: -Wno-missing-local-signatures -fno-safe-haskell -Wno-unsafe -j -threaded -rtsopts -with-rtsopts=-N
   build-depends:
     base >=4.7 && <5,
     hello

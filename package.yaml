@@ -41,6 +41,8 @@ executables:
       - hello
     ghc-options:
       - -Wno-missing-local-signatures
+      - -fno-safe-haskell
+      - -Wno-unsafe
       - -j
       - -threaded
       - -rtsopts
