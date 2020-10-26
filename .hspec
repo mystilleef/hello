@@ -1,0 +1,5 @@
+--format=failed-examples
+--failure-report .hspec-failures
+--fail-fast
+--rerun
+--rerun-all-on-success

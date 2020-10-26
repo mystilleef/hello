@@ -1,23 +1,67 @@
 name: hello
 version: '0.1.0.0'
-synopsis: Simple project template from stack
+synopsis: Hello World
 description: Please see README.md
 category: Web
 author: Lateef Alabi-Oki
 maintainer: mystilleef@gmail.com
 copyright:
 - '2020'
-- Your Name Here
+- Lateef Alabi-Oki
 license: GPL-3
 homepage: https://github.com/bitemyapp/hello#readme
 
+default-extensions:
+  - Safe
+  - NoImplicitPrelude
+  - UnicodeSyntax
+  - DerivingStrategies
+  - NamedFieldPuns
+  - RecordWildCards
+  - NumericUnderscores
+  - MultiWayIf
+  - LambdaCase
+
 dependencies:
-- base >=4.7 && <5
+  - base >=4.7 && <5
 
 library:
   source-dirs: src
+  ghc-options:
+    - -Weverything
+    - -fno-safe-haskell
+    - -Wno-unsafe
+    - -j
 
 executables:
-  hello:
+  hello-exe:
     main: Main.hs
-    source-dirs: src
+    source-dirs: app
+    dependencies:
+      - hello
+    ghc-options:
+      - -Wno-missing-local-signatures
+      - -j
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+
+tests:
+  hello-test:
+    main: Spec.hs
+    source-dirs: test
+    ghc-options:
+      - -Weverything
+      - -Wno-missing-exported-signatures
+      - -Wno-missing-import-lists
+      - -Wno-missing-export-lists
+      - -fno-safe-haskell
+      - -Wno-unsafe
+      - -j
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+    dependencies:
+      - hspec
+      - hspec-discover
+      - QuickCheck

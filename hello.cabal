@@ -4,39 +4,60 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 9052c052c7d01cfeed3f5e61d6a92e7fe199402ded863d56bc711f473ceac005
+-- hash: d49d82f4e5774a19993414639731da1519ccbd88fe5eab4f33e26eec70c87039
 
 name:           hello
 version:        0.1.0.0
-synopsis:       Simple project template from stack
+synopsis:       Hello World
 description:    Please see README.md
 category:       Web
 homepage:       https://github.com/bitemyapp/hello#readme
 author:         Lateef Alabi-Oki
 maintainer:     mystilleef@gmail.com
 copyright:      2020,
-                Your Name Here
+                Lateef Alabi-Oki
 license:        GPL-3
 license-file:   LICENSE
 build-type:     Simple
 
 library
   exposed-modules:
-    Main
+    Hello
   other-modules:
     Paths_hello
   hs-source-dirs:
     src
+  default-extensions: Safe NoImplicitPrelude UnicodeSyntax DerivingStrategies NamedFieldPuns RecordWildCards NumericUnderscores MultiWayIf LambdaCase
+  ghc-options: -Weverything -fno-safe-haskell -Wno-unsafe -j
   build-depends:
     base >=4.7 && <5
   default-language: Haskell2010
 
-executable hello
+executable hello-exe
   main-is: Main.hs
   other-modules:
     Paths_hello
   hs-source-dirs:
-    src
+    app
+  default-extensions: Safe NoImplicitPrelude UnicodeSyntax DerivingStrategies NamedFieldPuns RecordWildCards NumericUnderscores MultiWayIf LambdaCase
+  ghc-options: -Wno-missing-local-signatures -j -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-    base >=4.7 && <5
+    base >=4.7 && <5,
+    hello
+  default-language: Haskell2010
+
+test-suite hello-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+    Paths_hello
+  hs-source-dirs:
+    test
+  default-extensions: Safe NoImplicitPrelude UnicodeSyntax DerivingStrategies NamedFieldPuns RecordWildCards NumericUnderscores MultiWayIf LambdaCase
+  ghc-options: -Weverything -Wno-missing-exported-signatures -Wno-missing-import-lists -Wno-missing-export-lists -fno-safe-haskell -Wno-unsafe -j -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+    QuickCheck,
+    base >=4.7 && <5,
+    hspec,
+    hspec-discover
   default-language: Haskell2010
