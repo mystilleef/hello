@@ -4,47 +4,55 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: cfa35253477f72563e492a0711fec167eda351db388715b88759a97b9cb30a05
+-- hash: 57aaf9a128187e63f677d9f107babaa9884de1ae8554426c12c8c6cd7aa0b11a
 
 name:           hello
 version:        0.1.0.0
 synopsis:       Hello World
-description:    Please see README.md
-category:       Web
+description:    https://github.com/bitemyapp/hello#readme
+category:       utility
 homepage:       https://github.com/bitemyapp/hello#readme
+bug-reports:    https://github.com/mystilleef/hello/issues
 author:         Lateef Alabi-Oki
 maintainer:     mystilleef@gmail.com
-copyright:      2020,
-                Lateef Alabi-Oki
+copyright:      2020
 license:        GPL-3
 license-file:   LICENSE
 build-type:     Simple
+extra-source-files:
+  README.md
+
+source-repository head
+  type: git
+  location: https://github.com/mystilleef/hello
 
 library
   exposed-modules:
     DogsRule
     Hello
-  other-modules:
-    Paths_hello
   hs-source-dirs:
     src
   default-extensions: Safe NoImplicitPrelude UnicodeSyntax DerivingStrategies NamedFieldPuns RecordWildCards NumericUnderscores MultiWayIf LambdaCase
-  ghc-options: -Weverything -fno-safe-haskell -Wno-unsafe -j
+  ghc-options: -j -Weverything -Wcompat -Werror -fno-safe-haskell -Wno-unsafe -Wno-prepositive-qualified-module -Wno-missing-safe-haskell-mode
   build-depends:
     base >=4.7 && <5
+  if false
+    other-modules:
+      Paths_hello
   default-language: Haskell2010
 
 executable hello-exe
   main-is: Main.hs
-  other-modules:
-    Paths_hello
   hs-source-dirs:
     app
   default-extensions: Safe NoImplicitPrelude UnicodeSyntax DerivingStrategies NamedFieldPuns RecordWildCards NumericUnderscores MultiWayIf LambdaCase
-  ghc-options: -Wno-missing-local-signatures -fno-safe-haskell -Wno-unsafe -j -threaded -rtsopts -with-rtsopts=-N
+  ghc-options: -Wno-missing-local-signatures -Wno-prepositive-qualified-module -fno-safe-haskell -Wno-unsafe -O2 -j -threaded -rtsopts -with-rtsopts=-N
   build-depends:
     base >=4.7 && <5,
     hello
+  if false
+    other-modules:
+      Paths_hello
   default-language: Haskell2010
 
 test-suite hello-test
@@ -52,14 +60,15 @@ test-suite hello-test
   main-is: Spec.hs
   other-modules:
     HelloSpec
-    Paths_hello
   hs-source-dirs:
     test
   default-extensions: Safe NoImplicitPrelude UnicodeSyntax DerivingStrategies NamedFieldPuns RecordWildCards NumericUnderscores MultiWayIf LambdaCase
-  ghc-options: -Weverything -Wno-missing-exported-signatures -Wno-missing-import-lists -Wno-missing-export-lists -fno-safe-haskell -Wno-unsafe -j -threaded -rtsopts -with-rtsopts=-N
+  ghc-options: -Weverything -Wcompat -Werror -Wno-prepositive-qualified-module -Wno-missing-exported-signatures -Wno-missing-safe-haskell-mode -Wno-missing-import-lists -Wno-missing-export-lists -Wno-all-missed-specialisations -fno-safe-haskell -Wno-unsafe -j -threaded -rtsopts -with-rtsopts=-N
   build-depends:
     QuickCheck,
     base >=4.7 && <5,
-    hspec,
-    hspec-discover
+    hspec
+  if false
+    other-modules:
+      Paths_hello
   default-language: Haskell2010

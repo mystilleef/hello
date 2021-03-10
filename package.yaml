@@ -1,15 +1,15 @@
 name: hello
-version: '0.1.0.0'
-synopsis: Hello World
-description: Please see README.md
-category: Web
-author: Lateef Alabi-Oki
-maintainer: mystilleef@gmail.com
-copyright:
-- '2020'
-- Lateef Alabi-Oki
+version: 0.1.0.0
+github: "mystilleef/hello"
 license: GPL-3
+author: "Lateef Alabi-Oki"
+maintainer: "mystilleef@gmail.com"
+copyright: "2020"
+synopsis: Hello World
+category: utility
 homepage: https://github.com/bitemyapp/hello#readme
+description: https://github.com/bitemyapp/hello#readme
+extra-source-files: README.md
 
 default-extensions:
   - Safe
@@ -27,36 +27,56 @@ dependencies:
 
 library:
   source-dirs: src
+  when:
+    - condition: false
+      other-modules: Paths_hello
   ghc-options:
+    - -j
     - -Weverything
+    - -Wcompat
+    - -Werror
     - -fno-safe-haskell
     - -Wno-unsafe
-    - -j
+    - -Wno-prepositive-qualified-module
+    - -Wno-missing-safe-haskell-mode
 
 executables:
   hello-exe:
     main: Main.hs
     source-dirs: app
-    dependencies:
-      - hello
+    when:
+      - condition: false
+        other-modules: Paths_hello
     ghc-options:
       - -Wno-missing-local-signatures
+      - -Wno-prepositive-qualified-module
       - -fno-safe-haskell
       - -Wno-unsafe
+      - -O2
       - -j
       - -threaded
       - -rtsopts
       - -with-rtsopts=-N
+    dependencies:
+      - hello
 
 tests:
   hello-test:
     main: Spec.hs
     source-dirs: test
+    when:
+      - condition: false
+        other-modules: Paths_hello
     ghc-options:
       - -Weverything
+      - -Wcompat
+      - -Werror
+      - -Wno-prepositive-qualified-module
       - -Wno-missing-exported-signatures
+      - -Wno-missing-safe-haskell-mode
       - -Wno-missing-import-lists
       - -Wno-missing-export-lists
+      - -Wno-all-missed-specialisations
       - -fno-safe-haskell
       - -Wno-unsafe
       - -j
@@ -65,5 +85,4 @@ tests:
       - -with-rtsopts=-N
     dependencies:
       - hspec
-      - hspec-discover
       - QuickCheck
