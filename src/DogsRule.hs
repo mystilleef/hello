@@ -1,8 +1,7 @@
-module DogsRule (dogs) where
+module DogsRule (bark) where
 
 import Prelude (IO, putStrLn)
 
-dogs :: IO ()
-dogs = do
-  putStrLn "Who's a good puppy?!"
-  putStrLn "YOU ARE!!!!!"
+bark :: IO ()
+bark = do
+  putStrLn "woof woof woof woof!"

@@ -1,6 +1,6 @@
 module Main (module Main) where
 
-import DogsRule (dogs)
+import DogsRule (bark)
 import Hello (sayHello)
 import System.IO (BufferMode (NoBuffering), hSetBuffering, stdout)
 import Prelude (IO, getLine, putStr)
@@ -11,4 +11,4 @@ main = do
   putStr "Please input your name: "
   name <- getLine
   sayHello name
-  dogs
+  bark
