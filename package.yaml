@@ -2,9 +2,12 @@ name: hello
 version: 0.1.0.0
 github: "mystilleef/hello"
 license: GPL-3
+
 author: "Lateef Alabi-Oki"
 maintainer: "mystilleef@gmail.com"
+
 copyright: "2020"
+
 synopsis: Hello World
 category: utility
 homepage: https://github.com/bitemyapp/hello#readme
