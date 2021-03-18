@@ -1,6 +1,6 @@
-module Hello (sayHello) where
+module Hello (hi) where
 
 import Prelude (IO, String, putStrLn, ($), (<>))
 
-sayHello :: String -> IO ()
-sayHello name = putStrLn $ "Hi " <> name <> "!"
+hi :: String -> IO ()
+hi name = putStrLn $ "Hi " <> name <> "!"
