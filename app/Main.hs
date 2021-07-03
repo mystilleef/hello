@@ -8,7 +8,7 @@ import Prelude (IO, getLine, putStr)
 main :: IO ()
 main = do
   hSetBuffering stdout NoBuffering
-  putStr "Please input your name: "
+  putStr "Enter your name: "
   name <- getLine
   hi name
   bark
