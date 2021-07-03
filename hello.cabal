@@ -1,10 +1,10 @@
 cabal-version: 1.12
 
--- This file has been generated from package.yaml by hpack version 0.33.0.
+-- This file has been generated from package.yaml by hpack version 0.34.4.
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 57aaf9a128187e63f677d9f107babaa9884de1ae8554426c12c8c6cd7aa0b11a
+-- hash: 03e1b2721693ff571a2ef5598ac6983334db3412032fbd4e823d5f906e1cbeca
 
 name:           hello
 version:        0.1.0.0
@@ -32,27 +32,39 @@ library
     Hello
   hs-source-dirs:
     src
-  default-extensions: Safe NoImplicitPrelude UnicodeSyntax DerivingStrategies NamedFieldPuns RecordWildCards NumericUnderscores MultiWayIf LambdaCase
+  default-extensions:
+    Safe
+    NoImplicitPrelude
+    UnicodeSyntax
+    DerivingStrategies
+    NamedFieldPuns
+    RecordWildCards
+    NumericUnderscores
+    MultiWayIf
+    LambdaCase
   ghc-options: -j -Weverything -Wcompat -Werror -fno-safe-haskell -Wno-unsafe -Wno-prepositive-qualified-module -Wno-missing-safe-haskell-mode
   build-depends:
     base >=4.7 && <5
-  if false
-    other-modules:
-      Paths_hello
   default-language: Haskell2010
 
 executable hello-exe
   main-is: Main.hs
   hs-source-dirs:
     app
-  default-extensions: Safe NoImplicitPrelude UnicodeSyntax DerivingStrategies NamedFieldPuns RecordWildCards NumericUnderscores MultiWayIf LambdaCase
+  default-extensions:
+    Safe
+    NoImplicitPrelude
+    UnicodeSyntax
+    DerivingStrategies
+    NamedFieldPuns
+    RecordWildCards
+    NumericUnderscores
+    MultiWayIf
+    LambdaCase
   ghc-options: -Wno-missing-local-signatures -Wno-prepositive-qualified-module -fno-safe-haskell -Wno-unsafe -O2 -j -threaded -rtsopts -with-rtsopts=-N
   build-depends:
     base >=4.7 && <5,
     hello
-  if false
-    other-modules:
-      Paths_hello
   default-language: Haskell2010
 
 test-suite hello-test
@@ -62,13 +74,19 @@ test-suite hello-test
     HelloSpec
   hs-source-dirs:
     test
-  default-extensions: Safe NoImplicitPrelude UnicodeSyntax DerivingStrategies NamedFieldPuns RecordWildCards NumericUnderscores MultiWayIf LambdaCase
+  default-extensions:
+    Safe
+    NoImplicitPrelude
+    UnicodeSyntax
+    DerivingStrategies
+    NamedFieldPuns
+    RecordWildCards
+    NumericUnderscores
+    MultiWayIf
+    LambdaCase
   ghc-options: -Weverything -Wcompat -Werror -Wno-prepositive-qualified-module -Wno-missing-exported-signatures -Wno-missing-safe-haskell-mode -Wno-missing-import-lists -Wno-missing-export-lists -Wno-all-missed-specialisations -fno-safe-haskell -Wno-unsafe -j -threaded -rtsopts -with-rtsopts=-N
   build-depends:
     QuickCheck,
     base >=4.7 && <5,
     hspec
-  if false
-    other-modules:
-      Paths_hello
   default-language: Haskell2010
